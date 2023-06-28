@@ -92,3 +92,57 @@ function casse(string) {
   return newString;
 }
 console.log(casse("The Quick Brown Fox"));
+
+// 10. Write a JavaScript program that prints the elements of the following array.
+// Note : Use nested for loops.
+// Sample array : var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+// Sample Output :
+// "row 0"
+// " 1"
+// " 2"
+// " 1"
+// " 24"
+// "row 1"
+// ------
+// ------
+
+function printElements(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(`row ${i}`);
+    for (let j = 0; j < arr[i].length; j++) {
+      console.log(arr[i][j]);
+    }
+    console.log("----");
+  }
+}
+var a = [
+  [1, 2, 1, 24],
+  [8, 11, 9, 4],
+  [7, 0, 7, 27],
+  [7, 4, 28, 14],
+  [3, 10, 26, 7],
+];
+printElements(a);
+
+console.log("ili");
+// preko return
+function printElements2(arr) {
+  let niz = "";
+  for (let i = 0; i < arr.length; i++) {
+    niz += "red " + i + "\n"; //\n je za sledeci red
+    for (let j = 0; j < arr[i].length; j++) {
+      niz += " " + arr[i][j] + "\n";
+    }
+    niz += "----- \n";
+  }
+  return niz;
+}
+console.log(
+  printElements2([
+    [1, 2, 1, 24],
+    [8, 11, 9, 4],
+    [7, 0, 7, 27],
+    [7, 4, 28, 14],
+    [3, 10, 26, 7],
+  ])
+);
