@@ -55,28 +55,42 @@ console.log(shuffleArray([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 // console.log(binary_Search(items, 1)); //0
 // console.log(binary_Search(items, 5)); //4
 
-function first(niz, broj) {
-  let pocetak = 0;
-  let kraj = niz.length - 1;
-  while (pocetak <= kraj) {
-    let sredina = Math.floor((pocetak + kraj) / 2);
-    if (niz[sredina] === broj) {
-      return sredina;
-    } else if (niz[sredina] < broj) {
-      pocetak = sredina - 1;
-    } else {
-      kraj = sredina + 1;
-    }
-  }
-  return ` Ne postoji taj broj`;
-}
+// function first(niz, broj) {
+//   let pocetak = 0;
+//   let kraj = niz.length - 1;
+//   while (pocetak <= kraj) {
+//     let sredina = Math.floor((pocetak + kraj) / 2);
+//     if (niz[sredina] === broj) {
+//       return sredina;
+//     } else if (niz[sredina] < broj) {
+//       pocetak = sredina - 1;
+//     } else {
+//       kraj = sredina + 1;
+//     }
+//     pocetak++;
+//   }
 
-console.log(first(niz, 1));
-console.log(first(niz, 5));
+//   return ` Ne postoji taj broj`;
+// }
+// let niz = [1, 2, 3, 4, 5, 7, 8, 9];
+// console.log(first(niz, 1));
+// console.log(first(niz, 5));
 
-// 19. There are two arrays with individual values. Write a JavaScript program to compute the sum of each individual index value in the given array.
+// 19. There are two arrays with individual values. Write a JavaScript program to compute the sum of
+// each individual index value in the given array.
 // Sample array :
 // array1 = [1,0,2,3,4];
 // array2 = [3,5,6,7,8,13];
 // Expected Output :
 // [4, 5, 8, 10, 12, 13]
+function arrays(array1, array2) {
+  const newArray = [];
+  let veciNiz = array1 > array2 ? array1 : array2;
+  // let veciNiz = Math.max(array1, array2);
+  for (let i = 0; i < veciNiz.length; ++i) {
+    const suma = (array1[i] || 0) + (array2[i] || 0);
+    newArray.push(suma);
+  }
+  return newArray;
+}
+console.log(arrays([1, 0, 2, 3, 4], [3, 5, 6, 7, 8, 13]));
