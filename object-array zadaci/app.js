@@ -24,8 +24,11 @@ var student = {
 delete student.rollno;
 console.log(student);
 
+console.log("4. zadatak");
 // 4. Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following
 // books.
+// 4. Napišite JavaScript program koji će prikazati status čitanja (tj. prikazati ime knjige, ime autora i status čitanja) za sledeće
+//  knjige.
 
 var library = [
   {
@@ -44,3 +47,22 @@ var library = [
     readingStatus: false,
   },
 ];
+
+library.forEach((el) => {
+  let status = el.readingStatus ? "procitana" : "neprocitana";
+  console.log(
+    `Ime knjige: ${el.title}, ime autora: ${el.author}, status: ${status} `
+  );
+});
+
+console.log("3 zadatak");
+// Write a JavaScript program to get the length of a JavaScript object.
+// Sample object :
+var student = {
+  name: "David Rayy",
+  sclass: "VI",
+  rollno: 12,
+};
+
+let studentt = Object.keys(student).length;
+console.log(studentt);
